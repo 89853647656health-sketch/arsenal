@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" translate="no" class="notranslate">
 <head>
+<meta name="google" content="notranslate">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ARSENAL · The World Concept</title>
@@ -401,7 +403,7 @@ const R=["I","II","III","IV","V","VI","VII","VIII","IX","X"];
 const NAV=["phil","rules","concept","tech","arch","geo","logic","sec","road","pal","app","cont"];
 const params=new URLSearchParams(location.search);
 if(params.has('static')||navigator.webdriver) document.documentElement.classList.add('static');
-let lang=params.get('lang')||localStorage.getItem('arsenal.lang')||'en'; if(!D[lang]) lang='en';
+let lang=params.get('lang')||localStorage.getItem('arsenal.lang')||(navigator.language||'en').slice(0,2).toLowerCase(); if(!D[lang]) lang='en';
 const t=k=>(D[lang]&&D[lang][k])||D.en[k]||k;
 const sel=document.getElementById('langSel');
 ORDER.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=D[c]._name;sel.appendChild(o)});
